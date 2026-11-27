@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Friday Radar — Real Black Friday Deals, Checked 27 Nov 2026</title>
+  <meta name="description" content="34 real Black Friday and Cyber Monday deals, each checked at its store on 27 November 2026, with sale price, usual price, discount and an honest is-it-really-a-deal signal.">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header class="masthead">
+    <div class="masthead-inner">
+      <p class="kicker">BLACK FRIDAY &middot; 27 NOV 2026 &middot; CYBER MONDAY 30 NOV</p>
+      <h1>Friday Radar</h1>
+      <p class="tagline">Real deals, checked by hand today — sale price, usual price, and an honest call on whether each one is actually a bargain.</p>
+      <dl class="stats" id="stats">
+        <div><dt>Deals checked</dt><dd id="stat-deals">&ndash;</dd></div>
+        <div><dt>Stores</dt><dd id="stat-stores">&ndash;</dd></div>
+        <div><dt>New lows</dt><dd id="stat-lows">&ndash;</dd></div>
+        <div><dt>Biggest cut</dt><dd id="stat-biggest">&ndash;</dd></div>
+      </dl>
+    </div>
+  </header>
+
+  <main>
+    <section class="controls" aria-label="Find a deal">
+      <label class="search-box">
+        <span class="visually-hidden">Search deals</span>
+        <input id="search" type="search" placeholder="Search a product or store — try “AirPods” or “Dyson”" autocomplete="off">
+      </label>
+      <div class="chip-row" id="category-chips" role="group" aria-label="Filter by category"></div>
+      <div class="select-row">
+        <label>Store
+          <select id="store-filter"></select>
+        </label>
+        <label>Minimum discount
+          <select id="discount-filter">
+            <option value="0">Any discount</option>
+            <option value="20">20% off or more</option>
+            <option value="40">40% off or more</option>
+            <option value="50">50% off or more</option>
+          </select>
+        </label>
+        <label>Sort by
+          <select id="sort-select">
+            <option value="discount">Biggest discount %</option>
+            <option value="saving">Biggest saving ($)</option>
+            <option value="price-asc">Lowest price</option>
+            <option value="price-desc">Highest price</option>
+            <option value="name">Name A–Z</option>
+          </select>
+        </label>
+      </div>
+      <p class="result-count" id="result-count" aria-live="polite"></p>
+    </section>
+
+    <section aria-label="Deals">
+      <div class="deal-grid" id="deal-grid"></div>
+      <p class="empty-state" id="empty-state" hidden>No deals match that search. Try a different word, store or discount.</p>
+    </section>
+
+    <section class="compare" aria-label="Compare the same product across stores">
+      <h2>Same product, different stores</h2>
+      <p class="section-intro">Before you buy, check the other shelf. These are the products in this list that more than one store is selling — the cheapest price is marked.</p>
+      <div id="compare-list"></div>
+    </section>
+
+    <section class="how" aria-label="How these deals were checked">
+      <h2>How a deal gets on this page</h2>
+      <ol>
+        <li><strong>Found today.</strong> Every deal was found on Black Friday, 27 November 2026, by reading the price at the store or in a deals roundup that names the store.</li>
+        <li><strong>Checked, not copied.</strong> The sale price, the usual price and the discount must add up. If they do not, the deal does not go up.</li>
+        <li><strong>Given a signal.</strong> <span class="sig sig-new-low">NEW LOW</span> means the lowest price recorded for that product. <span class="sig sig-strong">STRONG PRICE</span> means a genuine cut worth buying. <span class="sig sig-routine">ROUTINE</span> means a fair price, not a blowout. <span class="sig sig-inflated">INFLATED</span> means the “usual” price was raised to flatter the cut — none of those made the list.</li>
+        <li><strong>Linked to the store.</strong> Every “View at store” button opens the product at the store that sells it. Prices move during the sale — always confirm at checkout.</li>
+      </ol>
+      <p class="checked-note" id="checked-note"></p>
+    </section>
+  </main>
+
+  <footer>
+    <p>Friday Radar — an independent deal finder. Not affiliated with Amazon, Best Buy, Dell, Woot, Dyson, Walmart or Home Depot. Store names and product names belong to their owners; links go to the stores.</p>
+    <p>Prices checked 27 Nov 2026. All prices in US dollars.</p>
+  </footer>
+
+  <div class="dialog-backdrop" id="dialog-backdrop" hidden>
+    <div class="dialog" role="dialog" aria-modal="true" aria-labelledby="dialog-title" id="dialog">
+      <button class="dialog-close" id="dialog-close" aria-label="Close details">&times;</button>
+      <div id="dialog-body"></div>
+    </div>
+  </div>
+
+  <script type="module" src="main.js"></script>
+</body>
+</html>
